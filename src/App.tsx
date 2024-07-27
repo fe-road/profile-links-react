@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+
+import MainButtonsContainer from './components/Buttons/MainButtonsContainer';
+import MainSection from './components/MainSection/MainSection';
+import SocialMediaContainer from './components/SocialMedia/SocialMediaContainer';
+import ThemeButton from './components/Buttons/ThemeButton';
+
+import { Theme } from './models/theme';
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [currentTheme, setCurrentTheme] = useState(Theme.DARK);
+    
+    return (
+        <main
+            className='main-container'
+            data-theme={currentTheme}
+        >
+            <div className='content-container'>
+                <MainSection />
+                <MainButtonsContainer />
+                <SocialMediaContainer />
+            </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+            <ThemeButton
+                theme={currentTheme}
+                setCurrentTheme={setCurrentTheme}
+            />
+        </main>
+    )
 }
 
-export default App
+export default App;

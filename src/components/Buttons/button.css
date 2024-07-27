@@ -1,0 +1,17 @@
+.link {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: var(--accent-color);
+    color: white;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+}
+
+.link:active,
+.link:hover {
+    filter: brightness(1.15) drop-shadow(2px 4px 4px var(--drop-shadow-color));
+    transition: all 0.2s ease-in;
+}

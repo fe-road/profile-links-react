@@ -1,0 +1,20 @@
+.social-link {
+    display: inline-block;
+    margin: 0 8px;
+    width: 42px;
+    height: 42px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in;
+}
+
+.social-link:active,
+.social-link:hover {
+    color: var(--accent-color);
+    transition: color 0.2s ease-in;
+}
+
+.social-link span {
+    font-size: 1.6rem;
+    margin-top: 8px;
+}
